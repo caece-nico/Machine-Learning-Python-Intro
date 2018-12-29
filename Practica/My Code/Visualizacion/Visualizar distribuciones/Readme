@@ -1,0 +1,28 @@
+Muestra distribucion.
+
+Para variables categricas usamos BarChar de matplotlib
+
+EJ: 
+
+fig = plt.figure(figsize=(6,6))
+ax = fig.gca()
+totales = data[variable categorica].value_counts()
+totales.plot.bar(ax=ax,color='blue')
+ax.y_label/x_label/ax.title
+plt.show()
+
+para variables numericas usamos histrogramas de matpotlib o densidad de seaborn
+
+import matplotlib.pyplot as plt
+import seabron as sea
+
+histogramas
+
+data[variable_numerica].plot.hist(bins=10,color='blue', ax = ax)
+
+distribusion de densidad
+
+sea.set_style('whitegrid')
+sea.distplot(data[varible_numerica],hist = False, bins = 10, rug = True)
+plt.xlabel/ylabel/title
+plt.show(.
