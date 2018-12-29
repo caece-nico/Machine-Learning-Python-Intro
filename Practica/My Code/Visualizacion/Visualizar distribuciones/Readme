@@ -26,3 +26,6 @@ sea.set_style('whitegrid')
 sea.distplot(data[varible_numerica],hist = False, bins = 10, rug = True)
 plt.xlabel/ylabel/title
 plt.show(.
+
+
+IMPORTANTE: Recordar que para hist y dist las variables deben ser de tipo numerico.
