@@ -8,7 +8,7 @@ fig = plt.figure(figsize=(6,6))
 ax = fig.gca()
 totales = data[variable categorica].value_counts()
 totales.plot.bar(ax=ax,color='blue')
-ax.y_label/x_label/ax.title
+ax.set_tlabel/set_xlabel/ax.set_title
 plt.show()
 
 para variables numericas usamos histrogramas de matpotlib o densidad de seaborn
