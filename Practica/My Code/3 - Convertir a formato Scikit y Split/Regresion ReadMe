@@ -1,0 +1,16 @@
+En este ejemplo de clasificacion hicmos varias cosas.
+
+1) abrimos el archivo ya limpio de los pasos nateriores.
+2) a las variables categoricas las encodeamos usando los parametros de coders de scikit learn.
+3) como en el array de Features solo tenemos las variables categoricas encodeadas ahora le hacemos un append a las varibales numericas.
+    Features = np.aconcatenate([Features,data[['','','','']]], axis = 1)
+4) hacemos un split en train data y test data. 
+5) escalamos las variables numericas en ambos datasets.
+6) aplicamos el modelo de regresion lineal.
+7) Hacemos una prediccion y_score = lim_mod.predic(x_test)
+8) creamos unas funcion para calcular los principales indicadores. R^2, sqrt(R^2), mean absolute error y meadia absolute error.
+  residuales = np.subtract(y_test.reshape(-1,1),y_score.reshape(-1,1))
+9) hacemos un grafico de los residuales.
+10) Si la variable a predecir fue escala por algun algoritmo como np.loc(data['price']) para los valores que se redijeron hayq ue llevarla
+a su forma original
+data['price'] = np.exp(data['price'])
