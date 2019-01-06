@@ -1,0 +1,33 @@
+1) se caga el archivo limpio de creditos aleman.
+2) Nos fijamos que tan imbalanceados estan los datos, o hacemos d dos formas distitas y cargamos la variable a predecir en "label"
+3) Encondeamos las variables categoricas.
+4) apendeamos a este modelos las variables numericas.
+    Features = np.concatenate([Features,np.array(data[['','',''...]])],axis=1)
+5) Separamos el modelo en train y test set.
+6) escalamos las variables numericas.
+7) aplicamos el modelo de calsificacion: Regresion Logistica Lineal.
+8) Predecimos las probabilidades para prob = lim_mod.predict_prob(x_test)
+9) a apartir de esta prediccion creamos un array de scores con un trashold que nosostros creamos.
+  scores = [1 if x > trashhold else 0 for x in proba[:,1]]
+9) creamos la matriz de confucion y metricas a partir de scores.
+        conf = sklm.precission_recall_fscore_suport(y_test,score)
+        metricas = sklm.accuracy_score(y_test,score)
+10) desarrollamos el grafico ROC y AUC.
+    FPR, TPR, trashold = sklm.roc_curve(y_test,prob[:,1])
+    auc = sklm.auc(FPR,TPR)
+    
+    plt.plot(FPR,TPR,color = 'orange',label = 'AUC %.02f' %auc)
+    plt.legend(loc = 'lower right')
+    plt.plot([0,1],[0,1],'r--')    
+    plt.xlim([0,1])
+    ply.ylim([0,1])
+    plt.xlabel('False positive rate')
+    plt.ylabel('True positive rate')
+    plt.show()
+
+11) Creamos un modelo NAIVE donde todos los casos son positivoc y hacemos lo mismo de los puntos 8,9 y 10. como este es un modelo
+    estandard no deberia ser mejor que el original.
+12) Para optimizar modificamos los pesos en el algotirmo.
+        logistic_mod = linear_model.LogisticRegression(class_weight={0:0.45, 1:0.55}) -> esto porque hay mas 0 que unos.
+        y apicamos desde 8 hasta 10. para ve si el modelo mejora.
+13) Otra optimizacion posible es crear una lista con trashholds e ir iterando y cambiarla y aplicar pasos de 9 al 10.
