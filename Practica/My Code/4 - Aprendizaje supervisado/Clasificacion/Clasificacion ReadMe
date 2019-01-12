@@ -1,5 +1,5 @@
-1) se caga el archivo limpio de creditos aleman.
-2) Nos fijamos que tan imbalanceados estan los datos, o hacemos d dos formas distitas y cargamos la variable a predecir en "label"
+1) se carga el archivo limpio de creditos aleman.
+2) Nos fijamos que tan imbalanceados estan los datos, lo hacemos de dos formas distitas y cargamos la variable a predecir en "label"
 3) Encondeamos las variables categoricas.
 4) apendeamos a este modelos las variables numericas.
     Features = np.concatenate([Features,np.array(data[['','',''...]])],axis=1)
