@@ -1,0 +1,13 @@
+Antes de poder empezar a trabaar con Scikit es necesario convertir los datos a arrays y encondearlos  escalar las varables numericas.
+
+1) encodearlo quiere decir ue si por ejemplo en una variable o feature tenemos categorias de tipos de autos como 
+"descapotable", "coupe","Largo", etc.. esto se debria encodear como [0,1,2,3] y un array quedaria de la forma: [0,0,0,1,2,2,2,1,0,0,1,3,3]
+pero para que el algoritmo no se vea influencia por estos valores del 0 al 3 creamos una matriz de codificacion donde
+[[1,0,0,0]] -- seria 0
+[[0,1,0,0]] -- seria 1 y asi hasta el 3.
+
+2) luego de hacer esto debemos separa los datos en x_train, y_train, x_test y y_test
+
+3) Apendeamos al array las variables numericas.
+
+3) Escalamos las variales numericas y el resutado es un array que se puede implementar en el modelo. 
