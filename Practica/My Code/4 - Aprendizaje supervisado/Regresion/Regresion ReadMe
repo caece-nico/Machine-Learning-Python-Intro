@@ -1,5 +1,7 @@
 En este ejemplo de clasificacion hicmos varias cosas.
 
+Importante-> par poder encodear necesitamos el paquete from sklearn import preprocesing.
+
 1) abrimos el archivo ya limpio de los pasos nateriores.
 2) a las variables categoricas las encodeamos usando los parametros de coders de scikit learn.
 3) como en el array de Features solo tenemos las variables categoricas encodeadas ahora le hacemos un append a las varibales numericas.
